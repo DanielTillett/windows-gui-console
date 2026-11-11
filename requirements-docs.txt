@@ -1,0 +1,2 @@
+# Optional: only used to regenerate docs/blog-post.html.
+Markdown==3.11.3
