@@ -136,6 +136,5 @@ console API support; they do not establish terminal-host compatibility.
 
 This revisits my old [2013 GUI/console article](https://www.tillett.info/2013/05/13/how-to-create-a-windows-program-that-works-as-both-as-a-gui-and-console-application/).
 The new implementation preserves redirection and omits the simulated Enter key.
-The companion [blog draft](docs/blog-post.md) explains the approach and its limits.
 
 MIT licensed; see [LICENSE](LICENSE).

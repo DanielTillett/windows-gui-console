@@ -13,7 +13,7 @@ def main():
     args = parser.parse_args()
     out = ROOT / "dist"
     out.mkdir(exist_ok=True)
-    files = [ROOT / name for name in ("README.md", "LICENSE", ".gitignore", ".gitattributes", "requirements-docs.txt")]
+    files = [ROOT / name for name in ("README.md", "LICENSE", ".gitignore", ".gitattributes")]
     for directory in ("include", "src", "tools", "tests", "docs", ".github"):
         files += [p for p in (ROOT / directory).rglob("*")
                   if p.is_file() and "__pycache__" not in p.parts and p.suffix != ".pyc"]
