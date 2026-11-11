@@ -134,36 +134,8 @@ console API support; they do not establish terminal-host compatibility.
 
 ## Background and licence
 
-This revisits Daniel Tillett's [2013 GUI/console article](https://www.tillett.info/2013/05/13/how-to-create-a-windows-program-that-works-as-both-as-a-gui-and-console-application/).
+This revisits my old [2013 GUI/console article](https://www.tillett.info/2013/05/13/how-to-create-a-windows-program-that-works-as-both-as-a-gui-and-console-application/).
 The new implementation preserves redirection and omits the simulated Enter key.
 The companion [blog draft](docs/blog-post.md) explains the approach and its limits.
 
 MIT licensed; see [LICENSE](LICENSE).
-
-## Prepare a GitHub release
-
-Publish this directory as its own repository; no private parent repository or
-other application sources are needed. CI configuration for x86 and x64 is in
-`.github/workflows/windows.yml`. It runs on pushes, pull requests and manual
-dispatch; local results do not imply that hosted CI has run.
-
-After building and testing both architectures:
-
-```powershell
-python tools/package.py --binaries
-```
-
-`dist/` contains a source ZIP, separate x86/x64 binary ZIPs (one EXE in each),
-and SHA256 checksums. Generated builds, local test reports and Git metadata
-are excluded from the source archive. The binaries are unsigned.
-
-The blog is supplied in Markdown and as an HTML fragment for WordPress's code
-editor. To regenerate the HTML:
-
-```powershell
-python -m pip install --target build/docs-tools -r requirements-docs.txt
-python tools/render_blog.py
-```
-
-Before publishing the blog, add the actual public repository URL to its
-building section. No GitHub account or repository URL is assumed here.
